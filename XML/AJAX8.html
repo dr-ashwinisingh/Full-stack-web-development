@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+   function sendFormData() {
+      // Creating XMLHttpRequest object
+      var zhttp = new XMLHttpRequest();
+      const mFormEle = document.querySelector("#mForm")
+      // Creating FormData object
+      const myForm = new FormData(mFormEle);
+      // Creating call back function to handle the response
+      zhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 201) {
+            document.getElementById("example").innerHTML = this.responseText;
+            console.log("Form Data Posted Successfully")
+         }
+      };
+      // Post/Add form data on the server
+      zhttp.open("POST", "https://jsonplaceholder.typicode.com/todos", true);
+      // Sending the request to the server
+      zhttp.send(new FormData(mFormEle));
+   }
+</script>
+<!--Creating simple form-->
+<form id = "mForm">
+   <h2>Enter the requested Data</h2>
+   <label for="Utitle">Title</label>
+   <input id="Utitle" type="text" name="title"><br>
+
+   <label for="UId">UserId</label>
+   <input id="UId" type="number" name="UserID"><br>
+
+   <label for="Ubody">Body</label>
+   <input id="Ubody" type="text" name="body"><br>
+
+   <label for="Uage">Age</label>
+   <input id="Uage" type="number" name="age"><br>
+
+   <button type="button" onclick="sendFormData()">Submit Record</button>
+</form>
+<div id="example"></div>
+</body>
+</html>

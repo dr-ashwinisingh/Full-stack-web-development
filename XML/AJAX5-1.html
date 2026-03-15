@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+   function delDoc() {
+      // Creating XMLHttpRequest object
+      var qhttp = new XMLHttpRequest();
+      // Creating call back function
+      qhttp.onreadystatechange = function() {
+         if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("sample").innerHTML = this.responseText;
+            console.log("Record Deleted Successfully")
+         }
+      };
+      // Deleting given file
+      qhttp.open("DELETE", "https://jsonplaceholder.typicode.com/todos/2", true);
+      // Sending the request to the server 
+      qhttp.send();
+   }
+</script>
+<div id="sample">
+   <h2>Example of DELETE Request</h2>
+   <button type="button" onclick="delDoc()">Deleteing Data</button>
+</div>
+</body>
+</html>

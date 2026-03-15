@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+   function getBinaryData() {
+      // Creating XMLHttpRequest object
+      var myhttp = new XMLHttpRequest();
+      // Getting binary data
+      myhttp.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+      // Set responseType to arraybuffer.
+      myhttp.responseType = "arraybuffer";
+      // Creating call back function
+      myhttp.onload = (event) => {
+         // IF the request is successful
+         if (myhttp.status === 200){
+            var arraybuffer = myhttp.response;
+            // Convert the arraybuffer into array
+            var data =  new Uint8Array(arraybuffer);
+            // Display the binary data
+            document.getElementById("example").innerHTML = data;
+            console.log("Binary data Received");
+         }else{
+            console.log("Found error");
+         }
+      };
+      // Sending the request to the server
+      myhttp.send();
+   }
+</script>
+<div id="example">
+   <p>AJAX Example</p>
+   <button type="button" onclick="getBinaryData()">Click Here</button>
+</div>
+</body>
+</html>
