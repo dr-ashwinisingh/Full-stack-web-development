@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function(){
+         alert( "Author = " + $("#home").data("author-name"));
+         alert( "Year = " + $("#home").data("year"));
+      });
+   });
+</script>
+</head>
+<body>
+   <p>Click the below button to see the result:</p>
+   
+   <div id="home" data-author-name="Maximus" data-year="2026">
+      Just an Example Content
+   </div>
+   <br>
+   <button>Get Attribute</button>
+</body>
+</html>

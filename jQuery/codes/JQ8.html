@@ -1,20 +1,16 @@
-<!doctype html>
-<html>
-<head>
 <title>The jQuery Example</title>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
    $(document).ready(function() {
-      $("h1").hide()
+      $(".red").css("color", "red")
    });
 </script>
 </head>
 <body>
-   <h1>jQuery Basic Syntax</h1>
+   <h1 class="red">jQuery Basic Syntax</h1>
 
-   <p id="demo">This is p tag</p>
-   <p>This is another p tag</p>
+   <p>This is p tag</p>
    <span>This is span tag</span>
-   <div>This is div tag</div>
+   <div class="red">This is div tag</div>
 </body>
 </html>

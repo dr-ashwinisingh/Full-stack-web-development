@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Student Registration Form</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+font-family: Arial;
+}
+
+form{
+width:300px;
+padding:20px;
+border:1px solid gray;
+}
+
+.error{
+color:red;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form id="studentForm">
+
+Name:<br>
+<input type="text" id="name"><br>
+<span class="error" id="nameError"></span><br>
+
+Email:<br>
+<input type="text" id="email"><br>
+<span class="error" id="emailError"></span><br>
+
+Age:<br>
+<input type="number" id="age"><br>
+<span class="error" id="ageError"></span><br>
+
+Password:<br>
+<input type="password" id="password"><br>
+<span class="error" id="passError"></span><br>
+
+Course:<br>
+<select id="course">
+<option value="">Select Course</option>
+<option>B.Tech</option>
+<option>BCA</option>
+<option>MCA</option>
+</select><br>
+<span class="error" id="courseError"></span><br><br>
+
+<button type="submit">Register</button>
+
+</form>
+
+<script>
+
+$(document).ready(function(){
+
+$("#studentForm").submit(function(e){
+
+e.preventDefault();
+
+$(".error").text("");
+
+var name=$("#name").val();
+var email=$("#email").val();
+var age=$("#age").val();
+var password=$("#password").val();
+var course=$("#course").val();
+
+var valid=true;
+
+if(name=="")
+{
+$("#nameError").text("Name is required");
+valid=false;
+}
+
+var emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(!email.match(emailPattern))
+{
+$("#emailError").text("Enter valid email");
+valid=false;
+}
+
+if(age<18 || age>30)
+{
+$("#ageError").text("Age must be between 18 and 30");
+valid=false;
+}
+
+if(password.length<6)
+{
+$("#passError").text("Password must be at least 6 characters");
+valid=false;
+}
+
+if(course=="")
+{
+$("#courseError").text("Select a course");
+valid=false;
+}
+
+if(valid)
+{
+alert("Registration Successful");
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

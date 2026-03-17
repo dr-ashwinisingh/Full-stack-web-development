@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<title>The jQuery Example</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+   $(document).ready(function() {
+      $("button").click(function(){
+         alert( "Href = " + $("#home").attr("href"));
+         alert( "Title = " + $("#home").attr("title"));
+      });
+   });
+</script>
+</head>
+<body>
+   <p>Click the below button to see the result:</p>
+   
+   <p><a id="home" href="www.geu.ac.in" title="GEU">Home</a></p>
+   <button>Get Attribute</button>
+</body>
+</html>

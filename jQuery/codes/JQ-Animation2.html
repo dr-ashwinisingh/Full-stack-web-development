@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>jQuery Attractive Animation</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+}
+
+#box{
+width:100px;
+height:100px;
+background:linear-gradient(to right, blue, purple);
+position:relative;
+border-radius:10px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+margin:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>jQuery Animation Demo</h2>
+
+<button id="animateBtn">Start Animation</button>
+
+<br><br>
+
+<div id="box"></div>
+
+<script>
+
+$(document).ready(function(){
+
+$("#animateBtn").click(function(){
+
+$("#box")
+.animate({left:'250px', opacity:'0.5', height:'150px', width:'150px'},1000)
+.animate({top:'120px', opacity:'1'},1000)
+.animate({left:'0px', height:'100px', width:'100px'},1000)
+.animate({top:'0px'},1000);
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

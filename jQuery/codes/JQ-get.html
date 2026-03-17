@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>jQuery GET Example</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+
+<h2>jQuery AJAX GET Method</h2>
+
+<button id="btnGet">Load Data</button>
+
+<div id="result"></div>
+
+<script>
+
+$(document).ready(function(){
+
+$("#btnGet").click(function(){
+
+$.get("data.txt", function(data){
+
+$("#result").html(data);
+
+});
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
