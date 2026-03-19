@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>PHP Example</title>
+</head>
 <body>
-   <h1>My PHP Website</h1>
-   <?php
-      echo "Hello World in PHP!";
-   ?>
+
+<h2>Hello PHP!</h2>
+
+<?php
+echo "Hello World!";
+?>
+
 </body>
 </html>
